@@ -33,12 +33,13 @@
     border-radius: 10px;
     width:fit-content;
     position:absolute;
-    top:19%;
+    top:25%;
     left:82%;
     transform:translate(-50%,-50%);
-    z-index:1000;
+    z-index:1200;
     box-shadow: 0,0,0,10px rgba(0,0,0,0.9);
     padding: 10px 20px 10px 20px;
+
     /* margin-right:90px; */
 
 }

@@ -36,11 +36,10 @@ cart.addEventListener("click",(event)=>
                 // cart_textContent="Added to Cart"
                 // cart_popup.textContent.style.display="block"
                 cart_popup.textContent=title.textContent
-                price_with_quantity.textContent=popup_price.textContent
                 multiply_values.style.display="block"
                 equating_values.style.display="block"
-
-                
+                price_with_quantity.textContent=popup_price.textContent
+                 
             }
             else{
                 // cart.textContent="Add to Cart"
@@ -50,6 +49,7 @@ cart.addEventListener("click",(event)=>
                 price_to_get_add.innerText=""
                 equating_values.innerText = ""
                 final_ansers.innerText = ""
+                price_with_quantity.textContent=""
                 console.log(multiply_values)
                 // multiply_values.style.visibility="hidden"
                 // equating_values.style.visibility="hidden"
