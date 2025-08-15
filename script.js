@@ -17,6 +17,9 @@ let price_to_get_add=document.querySelector("#price_to_get_add")
 let final_answers=document.querySelector("#answers")
 let multiply_values=document.querySelector("#multiply")
 let equating_values=document.querySelector("#equating")
+let hiding_popup_image=document.querySelector("#popup_thumbnail_images")
+let check_out_button=document.querySelector("#crating")
+let delete_icon=document.querySelector("#delete_icon")
 cart.addEventListener("click",(event)=>
 {
     event.preventDefault();
@@ -41,18 +44,23 @@ cart.addEventListener("click",(event)=>
                 price_with_quantity.textContent=popup_price.textContent
                 multiply_values.style.display="block"
                 equating_values.style.display="block"
-                final_answers.textContent=m
+                hiding_popup_image.style.display="block"
+                final_answers.textContent=`$${m.toFixed(2)}`
+                delete_icon.style.display="block"
                 
             }
             else if (d==0){
                 display_popup.style.display="block"
                 cart_popup.textContent="Your cart is Empty"
-                // console.log("ganapathy")
-                price_with_quantity.innerHTML=""
+                price_with_quantity.innerHTML=" "
+                console.log(price_with_quantity.innerHTML)
                 multiply_values.style.display="none"
                 equating_values.style.display="none"
                 final_answers.textContent=" "
-                // console.log("ajith")
+                hiding_popup_image.style.display="none"
+                price_to_get_add.style.display="none"
+                check_out_button.style.display="none"
+                delete_icon.style.display="none"
                 
             }
             
@@ -74,10 +82,12 @@ addition.addEventListener("click",(event)=>{
 
 subtract.addEventListener("click",(event)=>{
     event.preventDefault();
-    counts=counts-1
-    if(counts>=0){
+    if (counts>0){
+        counts=counts-1
         numbers.textContent=counts
+
     }
+    
    
     
 });
