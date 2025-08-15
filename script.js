@@ -81,11 +81,3 @@ subtract.addEventListener("click",(event)=>{
    
     
 });
-
-
-// final_answers.textContent=price_to_get_add.value*parseInt(price_with_quantity.textContent)
-            // console.log(price_with_quantity.textContent) => $125.00  => String
-            // console.log(price_to_get_add.textContent) => 4  => String
-
-
-                        // c=125.00  => Number
