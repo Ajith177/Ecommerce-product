@@ -20,6 +20,8 @@ let equating_values=document.querySelector("#equating")
 let hiding_popup_image=document.querySelector("#popup_thumbnail_images")
 let check_out_button=document.querySelector("#crating")
 let delete_icon=document.querySelector("#delete_icon")
+let total_cart_item=document.querySelector("#circle")
+let cart_icon=document.querySelector("#cart")
 cart.addEventListener("click",(event)=>
 {
     event.preventDefault();
@@ -28,47 +30,19 @@ cart.addEventListener("click",(event)=>
         {
            
             cart_popup.textContent=title.textContent
-            price_to_get_add.textContent=parseInt(numbers.textContent)
-            let a=price_with_quantity.textContent
-            let b=a.replace("$","")
-            let c=parseInt(b)     
-            let d=parseInt(price_to_get_add.textContent)
-           let m=c*d 
-           let g=0
-
-
-            if(numbers.textContent>0)
-            {
-                display_popup.style.display="block"
-                cart_popup.textContent=title.textContent
-                price_with_quantity.textContent=popup_price.textContent
-                multiply_values.style.display="block"
-                equating_values.style.display="block"
-                hiding_popup_image.style.display="block"
-                final_answers.textContent=`$${m.toFixed(2)}`
-                delete_icon.style.display="block"
-                
-            }
-            else if (d==0){
-                display_popup.style.display="block"
-                cart_popup.textContent="Your cart is Empty"
-                price_with_quantity.innerHTML=" "
-                console.log(price_with_quantity.innerHTML)
-                multiply_values.style.display="none"
-                equating_values.style.display="none"
-                final_answers.textContent=" "
-                hiding_popup_image.style.display="none"
-                price_to_get_add.style.display="none"
-                check_out_button.style.display="none"
-                delete_icon.style.display="none"
-                
-            }
+            price_with_quantity.textContent=popup_price.textContent
+            total_cart_item.textContent=parseInt(numbers.textContent)
+            display_popup.style.display="none"
+            total_cart_item.style.display="none"
             
         }
-        else{
-            // console.log("varata")
-            display_popup.style.display="none"
+        if (total_cart_item.textContent>0){
+            total_cart_item.style.display="block"
         }
+        else{
+            total_cart_item.style.display="none"
+        }
+
     
 
 });
@@ -77,6 +51,7 @@ addition.addEventListener("click",(event)=>{
     event.preventDefault();
     counts=counts+1
     numbers.textContent=counts
+    display_popup.style.display="none"
    
 });
 
@@ -85,9 +60,67 @@ subtract.addEventListener("click",(event)=>{
     if (counts>0){
         counts=counts-1
         numbers.textContent=counts
+        display_popup.style.display="none"
 
     }
     
-   
-    
 });
+
+delete_icon.addEventListener("click",(event)=>{
+    event.preventDefault();
+    display_popup.style.display="block"
+    cart_popup.textContent="Your Cart is Empty"
+    price_with_quantity.innerHTML=" "
+    multiply_values.style.display="none"
+    equating_values.style.display="none"
+    final_answers.textContent=" "
+    hiding_popup_image.style.display="none"
+    price_to_get_add.style.display="none"
+    check_out_button.style.display="none"
+    delete_icon.style.display="none"
+    total_cart_item.style.display="none"
+
+})
+
+cart_icon.addEventListener("click",(event)=>{
+    event.preventDefault();
+    price_to_get_add.textContent=parseInt(numbers.textContent)
+    let a=price_with_quantity.textContent
+    let b=a.replace("$","")
+    let c=parseInt(b)     
+    let d=parseInt(price_to_get_add.textContent)
+    let g=0
+    let m=c*d 
+
+    if(numbers.textContent>0)
+            {
+            display_popup.style.display="block"
+            cart_popup.textContent=title.textContent
+            multiply_values.style.display="block"
+            equating_values.style.display="block"
+            hiding_popup_image.style.display="block"
+            final_answers.textContent=`$${m.toFixed(2)}`
+            console.log(final_answers.textContent)
+            delete_icon.style.display="block"
+            price_to_get_add.style.display="block"
+                
+            }
+    else if (d==0){
+            display_popup.style.display="block"
+            cart_popup.textContent="Your cart is Empty"
+            price_with_quantity.innerHTML=" "
+            multiply_values.style.display="none"
+            equating_values.style.display="none"
+            final_answers.textContent=" "
+            hiding_popup_image.style.display="none"
+            price_to_get_add.style.display="none"
+            check_out_button.style.display="none"
+            delete_icon.style.display="none"
+                
+    }
+    else{
+            display_popup.style.display="none"
+        }
+
+})
+

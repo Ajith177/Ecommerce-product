@@ -107,16 +107,16 @@ body
 .person
 {
     width:27%;
-    margin-left:20px;
-    margin-top:7px;
+    /* margin-left:20px; */
+    /* margin-top:7px; */
     cursor:pointer;
 
 }
 
 .div4
 {
-    /* border: 2px solid blue; */
-    margin-right:4%;
+
+    display:flex;
 
 }
 
@@ -237,7 +237,51 @@ body
 .delete_icon
 {
     
+    left:7px;
+    position:relative;
+
 }
+
+.delete_icon:hover{
+    cursor:pointer;
+}
+
+.circle
+{
+   position:relative;
+   border:1px solid black;
+   color:white;
+   background-color: #da6e2e;
+   padding:2px;
+   border-radius: 50%;
+   height:25px;
+   width:15px;
+   right:18px;
+   bottom:10px;
+   font-weight: 500;
+   display:none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media all and (min-width:319px) and (max-width:425px)
 {
